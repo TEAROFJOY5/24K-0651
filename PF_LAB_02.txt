@@ -1,0 +1,96 @@
+
+
+Question 1
+Start
+Declare num1, num2, num3,Greater_num
+Print " Enter first number"
+Print " Enter second number"
+Print " Enter third number"
+  if Calc num1>num2
+	then Print num1 is greater than num2.
+	num1==Greater_num
+  else Calc num2>num1
+	then Print num2 is greater than num1.
+	num2==Greater_num
+if Greater_num>num3
+	then Print GreaterNum is the Greatest number of all the three number.
+else 
+	Print num3 is the Greatest Number of all the three number.
+End
+
+
+Question 2
+Start 
+Declare n=1,N=4,M=7,sum
+Calc sum=12
+Print The sum of the number is 12.
+End
+
+
+Question 3
+Start
+Declare c,n,N,operator.
+Print "Enter First number"
+Print "Enter Second number"
+Print "Enter an operator."
+ if operator= '+'
+   then Calc c=n+N
+   Print " sum of first and second number is "
+ else if operator= '-'
+    print Calc c=n-N
+   Print " difference of first and second number is "
+ else 
+    Print " You have entrr an invalid number "
+End
+
+
+
+
+Question 4
+Take two numbers n and N
+To check n is divisible by N
+when n%N is zero.
+Then n is dividsible by N.
+Otherwise n is not divisible by N.
+
+Question 5
+
+Ask the user to enter any number between 1 to 12.
+When user enter 1, output the month is January
+When user enter 2, output the month is Febrary.
+When user enter 3, output the month is March.
+When user enter 4, output the month is April.
+When user enter 5, output the month is May.
+When user enter 6, output the month is June.
+When user enter 7, output the month is July.
+When user enter 8, output the month is August.
+When user enter 9, output the month is September.
+When user enter 10, output the month is October.
+Wher user enter 11, output the month is November.
+When user enter 12 output the month is December.
+
+
+Question 6
+You will take two numbers as input from the user.
+After this take one of these operator (+,-,/,*) as input from the user.
+After having numbers and operator as input, now operation will be perform.
+At last, output the result of operation to the user.
+
+  
+Start
+Show the mathematical operation symbols +,-,/,* and %
+Print Please select the operation symbol
+Print Enter first_number
+Print Enter second_number
+if the operation symbol is +''
+	Calc Ans= first_number + second_number
+if the operation symbol is -''
+	Calc Ans= first_number - second_number
+if the operation symbol is '*' 
+	Calc Ans= first_number * second_number
+if the operation symbol is '/' And IF second_number is not zero
+	then Calc Ans= first_number / second_number
+if the operation symbol is '%' 
+	Calc Ans= first_number % second_number
+Print the answer
+End
