@@ -1,0 +1,2 @@
+x is assigned 5 values after it the condition is checked that is 5 > 8 which is false, so we move to second part of the ternary operator after: the expression 1!=2 <5 is evaluated from left to right because of operator precedence. 1!= 2 is evaluated first, this expression is true the answer is 1 then 1<5 is evaluated. Since 1 is indeed less than 5 this is true (which is also 1) , so therefore x is assigned the value of 20. The final answer is 20 not 30.
+
