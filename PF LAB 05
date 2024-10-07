@@ -1,1 +1,32 @@
-
+#include<stdio.h>
+int main()
+{
+   int cal,fat; float Cal_from_fat,PerCal_from_fat;
+   printf("Please enter the number of the calories in the food:");
+   scanf("%d",&cal);
+   printf("\nPlease enter the number of fat grams in the food:");
+   scanf("%d",&fat);
+	if(cal<0)  
+	{
+          printf("\nPlease enter valid number of calories in the food:");
+	  scanf("%d",&cal);
+	} 
+        
+        else if(fat<0)  
+	{
+          printf("\nPlease enter valid number of fat grams in the food:");
+	  scanf("%d",&fat);
+	} 
+  else
+   {
+       Cal_from_fat=fat*9;
+	if(Cal_from_fat>cal)
+        {
+	  printf("\nEither you have entered wrong number of calories or fat grams");
+  	}  
+	 else { 
+                PerCal_from_fat=(Cal_from_fat/cal)*100;
+                printf("\nPercentage of Calories from Fat is %f", PerCal_from_fat);
+   	      }
+   }
+}
