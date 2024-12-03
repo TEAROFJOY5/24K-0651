@@ -8,7 +8,6 @@ c ----> a
 temp ----> a  */
 
 #include<stdio.h>
-#include<string.h>
 #include<stdlib.h>
  void swaped(int *aPtr,int *bPtr, int * cPtr ) 
   {
