@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_WORDS 100
-#define MAX_LEN 50
+#define MAX_WORDS 100   // MAX_WORDS is the Maximum number of unique words that program will track.
+#define MAX_LEN 50      //MAX_LEN is the maximum length of any word (50 characters).
 
 int main() {
     FILE *ptr;
