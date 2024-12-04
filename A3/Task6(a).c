@@ -2,21 +2,21 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Weather Structure
+// Weather ka Structure
 typedef struct Weather {
     float temperature;
     float rainfall;
     float wind_speed;
 } Weather;
 
-// Crops Structure
+// Crops ka Structure
 typedef struct Crops {
     char cropType[20];
     char grownthStage[20];
     float expectedYield;
 } Crops;
 
-// Smart Equipment Structure
+// Smart Equipment ka Structure
 typedef struct smartEquipment {
     char name[30];
     float fuel_level;
@@ -24,14 +24,14 @@ typedef struct smartEquipment {
     char activity_schedule[50];
 } smartEquipment;
 
-// Sensor Structure
+// Sensor ka Structure
 typedef struct Sensor {
     float soil_nutrients;
     float pH_level;
     int pest_activity;
 } Sensor;
 
-// Field Structure
+// Field ka Structure
 typedef struct Field {
     char GPS_coordinates[50];
     float soil_health;
@@ -55,7 +55,7 @@ typedef struct CentralServer {
     int num_hubs;
 } CentralServer;
 
-// Function jp Field banai ga
+// Function jo Field banai ga
 Field* create_field(int num_crops, int num_equipment, int num_sensors) {
     Field *field = (Field *)malloc(sizeof(Field));
     if (!field) {
@@ -63,7 +63,7 @@ Field* create_field(int num_crops, int num_equipment, int num_sensors) {
         exit(1);
     }
 
-    // Allocate dynamic memory for crops, equipment, and sensors
+    // Hum Allocate dynamic memory kar rahe hein crops, equipment, aur sensors ke liya
     field->crops = (Crops *)malloc(num_crops * sizeof(Crops));
     field->equipment = (smartEquipment *)malloc(num_equipment * sizeof(smartEquipment));
     field->sensors = (Sensor *)malloc(num_sensors * sizeof(Sensor));
@@ -73,7 +73,7 @@ Field* create_field(int num_crops, int num_equipment, int num_sensors) {
         exit(1);
     }
 
-    // Initialize the field
+    // Initialize kar rahe hein field ko
     strcpy(field->GPS_coordinates, "");
     field->soil_health = 0.0;
     field->moisture_level = 0.0;
@@ -113,7 +113,7 @@ void populate_regional_hub(RegionalHub *hub, int num_crops, int num_equipment, i
     for (int i = 0; i < hub->num_fields; i++) {
         hub->fields[i] = *create_field(num_crops, num_equipment, num_sensors);
 
-        // Example data for crops, equipment, and sensors
+        // Example data hai crops, equipment, aur sensors ke liya jo console par print hoga
         add_crop(&hub->fields[i].crops[0], "Wheat", "Growing", 500.0);
         add_crop(&hub->fields[i].crops[1], "Corn", "Harvesting", 300.0);
 
@@ -197,13 +197,13 @@ void free_central_server(CentralServer *server) {
 }
 
 int main() {
-    // Create central server
+    //  central server bana rahe hein
     CentralServer *server = create_central_server(1);
 
-    // Populate central server with hubs, fields, and their components
+    // Us central server ko populate kar rahe hein hubs, fields, aur unke components se
     populate_central_server(server, 2, 2, 1, 1);
 
-    // Display data for the first field in the first hub
+    // Data display karene ke liya first field ke jo first hub mein hai
     display_field(&server->hubs[0].fields[0]);
 
     // Free allocated memory
