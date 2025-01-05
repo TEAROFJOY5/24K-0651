@@ -1,9 +1,9 @@
 /* A program that caculate string length,
-* that copy strings, 
-* that compare strings,
-* and that catenate one string into another
-* using the custom made functions. 
-*/
+ * that copy strings, 
+ * that compare strings,
+ * and that catenate one string into another
+ * using the custom made functions. 
+ */
 
 
 
