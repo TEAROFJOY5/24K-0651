@@ -1,3 +1,12 @@
+/* A program that caculate string length,
+* that copy strings, 
+* that compare strings,
+* and that catenate one string into another
+* using the custom made functions. 
+*/
+
+
+
 #include<stdio.h>
 int xstrlen(char str1[])
 {   int length=0;
