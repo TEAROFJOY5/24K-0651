@@ -1,0 +1,18 @@
+/* Two numbers are entered through the keyboard. Write a 
+ * program to find the value of one number raised to the power 
+ * of another.
+ */
+ #include<stdio.h>
+ int main()
+ {
+   int b,e,result=1;
+   printf("\nEnter the base: ");
+   scanf("%d",&b);
+   printf("\nEnter the exponent: ");
+   scanf("%d",&e);
+   for(int i=0;i<e;i++)
+   {   
+       result*=b;
+   }
+   printf("%d",result);
+ }  
