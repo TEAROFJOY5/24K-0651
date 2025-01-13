@@ -25,7 +25,7 @@ int main() {
             printf(" ");
         }
         // Print the decreasing sequence
-        for (j = i - 1; j >= 0; j--) {
+        for (j = i - 2; j >= 0; j--) {
             printf("%c", 'A' + j);
         }
         printf("\n");
