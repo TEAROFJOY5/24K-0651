@@ -15,8 +15,10 @@ int main()
     
     printf("\nEnter the age of Ram: ");
       /* get() is used to read each character of the input.
-   We then convert the characters (which are digits) into an integer by multiplying the previous number by 10 and adding the current digit.
-   The loop continues until a newline character (\n) is encountered, indicating the end of the input.
+   We then convert the characters (which are digits) into an integer 
+   by multiplying the previous number by 10 and adding the current digit.
+   The loop continues until a newline character (\n) is encountered, 
+   indicating the end of the input. And characters inputted are converted into the form of an integer number.
   */
     while ((ch = getc(stdin)) != '\n') {
         if (ch >= '0' && ch <= '9') {
