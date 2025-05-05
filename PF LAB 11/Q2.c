@@ -1,3 +1,7 @@
+/*
+ * This C program reads words from a file (text.txt) and counts the frequency of each unique word. 
+ * It then prints the list of unique words along with how many times each appeared in the file.
+ */
 #include <stdio.h>
 #include <string.h>
 
