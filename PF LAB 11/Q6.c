@@ -57,14 +57,18 @@ int main() {
     }
 
     printf("\nEmployee Details:\n");
-   fread(employee_data, sizeof(struct Worker), num_employees, file_pointer);
+   if (fread(employee_data, sizeof(struct Worker), num_employees, file_pointer) == num_employees) {
     for (index = 0; index < num_employees; index++) {
-    printf("\nName: %s\n", employee_data[index].full_name);
-    printf("ID: %d\n", employee_data[index].employee_id);
-    printf("Salary: %.2f\n", employee_data[index].monthly_salary);
-    printf("City: %s\n", employee_data[index].location.city_name);
-    printf("Zip Code: %s\n", employee_data[index].location.postal_code);
+        printf("\nName: %s\n", employee_data[index].full_name);
+        printf("ID: %d\n", employee_data[index].employee_id);
+        printf("Salary: %.2f\n", employee_data[index].monthly_salary);
+        printf("City: %s\n", employee_data[index].location.city_name);
+        printf("Zip Code: %s\n", employee_data[index].location.postal_code);
+    }
+} else {
+    printf("Error reading employee data.\n");
 }
+
 
     }
     fclose(file_pointer);
