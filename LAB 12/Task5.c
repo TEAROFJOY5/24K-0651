@@ -5,62 +5,58 @@ DynamicArray = "Muhib Ahmed"; // Before
 
 DynamicArray = "K241234 Muhib Ahmed"; // After the text append */
 
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 int main() {
-    int num;
-    char *name, studentId[50];
+    int nameLength;
+    char *fullName;
+    char studentId[50];
 
-    
-    printf("Enter the number of characters in your name (First + Last Name): ");
-    scanf("%d", &num);
-    getchar();  
+    // Ask how many characters are in the user's name
+    printf("Enter number of characters in your full name: ");
+    scanf("%d", &nameLength);
+    getchar();  // clear the newline from input buffer
 
-    
-    name = (char *)calloc(num + 1, sizeof(char));
-    if (name == NULL) {
-        printf("Memory Allocation Failed!");
+    // Allocate memory for the name
+    fullName = (char *)malloc((nameLength + 1) * sizeof(char)); // +1 for null terminator
+    if (fullName == NULL) {
+        printf("Memory allocation failed.\n");
         return 1;
     }
 
-    
+    // Take name input
     printf("Enter your full name: ");
-    fgets(name, num + 1, stdin);
-    name[strcspn(name, "\n")] = '\0';  
-    
+    fgets(fullName, nameLength + 1, stdin);
+    fullName[strcspn(fullName, "\n")] = '\0'; // remove newline
 
-
+    // Take student ID input
     printf("Enter your Student ID: ");
-    fgets(studentId, 50, stdin);
-    studentId[strcspn(studentId, "\n")] = '\0';  // Removing the newline character
+    fgets(studentId, sizeof(studentId), stdin);
+    studentId[strcspn(studentId, "\n")] = '\0'; // remove newline
 
-    
-    
-    int newSize = strlen(name) + strlen(studentId) + 2;  
-    
-    name = (char *)realloc(name, newSize * sizeof(char));
-    if (name == NULL) {
-        printf("Memory Reallocation Failed!");
+    // Calculate new size for combined string
+    int newLength = strlen(studentId) + 1 + strlen(fullName) + 1;
+
+    // Resize memory to fit ID + space + name
+    fullName = (char *)realloc(fullName, newLength * sizeof(char));
+    if (fullName == NULL) {
+        printf("Memory reallocation failed.\n");
         return 1;
     }
 
+    // Move the original name to make space for ID + space
+    memmove(fullName + strlen(studentId) + 1, fullName, strlen(fullName) + 1);
 
-    memmove(name + strlen(studentId) + 1, name, strlen(name) + 1);  
-    
-    strncpy(name, studentId, strlen(studentId));  
-    
-    name[strlen(studentId)] = ' ';              
-    
+    // Copy ID and space at the start
+    strncpy(fullName, studentId, strlen(studentId));
+    fullName[strlen(studentId)] = ' ';
 
+    // Print final result
+    printf("Updated Dynamic Array: \"%s\"\n", fullName);
 
-    printf("Updated Dynamic Array: \"%s\"\n", name);
-
-
-    free(name);
-
+    free(fullName); // Free the memory
     return 0;
 }
+
