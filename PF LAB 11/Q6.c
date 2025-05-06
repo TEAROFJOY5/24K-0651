@@ -1,3 +1,8 @@
+/* 
+ * This C program allows the user to input details for multiple employees, save them to a binary file, 
+ * and then read and display the saved data. 
+ * It uses fwrite() and fread(), which are key functions for binary file handling
+ */
 #include <stdio.h>
 
 struct Location {
