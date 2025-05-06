@@ -57,14 +57,15 @@ int main() {
     }
 
     printf("\nEmployee Details:\n");
-    while (fread(&employee_data[0], sizeof(struct Worker), 1, file_pointer)) {
-        for (index = 0; index < num_employees; index++) {
-            printf("\nName: %s\n", employee_data[index].full_name);
-            printf("ID: %d\n", employee_data[index].employee_id);
-            printf("Salary: %.2f\n", employee_data[index].monthly_salary);
-            printf("City: %s\n", employee_data[index].location.city_name);
-            printf("Zip Code: %s\n", employee_data[index].location.postal_code);
-        }
+   fread(employee_data, sizeof(struct Worker), num_employees, file_pointer);
+    for (index = 0; index < num_employees; index++) {
+    printf("\nName: %s\n", employee_data[index].full_name);
+    printf("ID: %d\n", employee_data[index].employee_id);
+    printf("Salary: %.2f\n", employee_data[index].monthly_salary);
+    printf("City: %s\n", employee_data[index].location.city_name);
+    printf("Zip Code: %s\n", employee_data[index].location.postal_code);
+}
+
     }
     fclose(file_pointer);
     return 0;
