@@ -9,27 +9,15 @@ Dynamic Array = "Muhib Ahmed";*/
 #include <stdlib.h>
 
 int main() {
-    int n;
+    char buffer[100];
+printf("Enter your full name: ");
+fgets(buffer, sizeof(buffer), stdin);
+buffer[strcspn(buffer, "\n")] = '\0'; // strip newline
 
-    printf("How many characters are in your full name (without counting spaces)? ");
-    scanf("%d", &n);
+int n = strlen(buffer);
+char *name = (char *)malloc((n + 1) * sizeof(char));
+strcpy(name, buffer);
 
-    getchar(); // to consume the leftover newline character
-
-    char *name = (char *)malloc((n + 1) * sizeof(char)); // +1 for null terminator
-
-    if (name == NULL) {
-        printf("Memory allocation failed.\n");
-        return 1;
-    }
-
-    printf("Enter your full name: ");
-    fgets(name, n + 1, stdin); // read up to n characters
-
-    printf("Your name is: %s\n", name);
-
-    free(name); // free the memory
-    return 0;
+printf("Your name is: %s\n", name);
+free(name);
 }
-
-    
