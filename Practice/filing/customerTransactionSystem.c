@@ -120,6 +120,6 @@ int main()
 }
     fclose(ofptr);
     fclose(tfptr);
-    fclose(ntfptr);
+    fclose(nfptr);
 
 }
